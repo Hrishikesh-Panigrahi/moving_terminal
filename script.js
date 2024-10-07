@@ -28,6 +28,27 @@ handles.forEach((handle) => {
     document.addEventListener("mousemove", resize);
     document.addEventListener("mouseup", stopResize);
   });
+
+  // for mobile
+  handle.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    isResizing = true;
+    currentHandle = handle;
+    startX = e.clientX;
+    startY = e.clientY;
+    startWidth = parseInt(
+      document.defaultView.getComputedStyle(terminal).width,
+      10
+    );
+    startHeight = parseInt(
+      document.defaultView.getComputedStyle(terminal).height,
+      10
+    );
+    startTop = terminal.offsetTop;
+    startLeft = terminal.offsetLeft;
+    document.addEventListener("touchmove", resize);
+    document.addEventListener("touchend", stopResize);
+  });
 });
 
 function resize(e) {
@@ -73,6 +94,9 @@ function stopResize() {
   isResizing = false;
   document.removeEventListener("mousemove", resize);
   document.removeEventListener("mouseup", stopResize);
+  document.removeEventListener("touchmove", resize);
+  document.removeEventListener("touchend", stopResize);
+
 }
 
 // Dragging logic
@@ -83,6 +107,15 @@ header.addEventListener("mousedown", (e) => {
   startY = e.clientY - terminal.offsetTop;
   document.addEventListener("mousemove", drag);
   document.addEventListener("mouseup", stopDrag);
+});
+
+header.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  isDragging = true;
+  startX = e.clientX - terminal.offsetLeft;
+  startY = e.clientY - terminal.offsetTop;
+  document.addEventListener("touchmove", drag);
+  document.addEventListener("touchend", stopDrag);
 });
 
 function drag(e) {
@@ -103,6 +136,8 @@ function stopDrag() {
   isDragging = false;
   document.removeEventListener("mousemove", drag);
   document.removeEventListener("mouseup", stopDrag);
+  document.removeEventListener("touchmove", drag);
+  document.removeEventListener("touchend", stopDrag);
 }
 
 function resizeFont() {

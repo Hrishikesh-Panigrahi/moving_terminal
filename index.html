@@ -9,11 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen p-4">
 
-<body class="bg-gray-900 flex items-center justify-center h-screen">
-
-    <div id="terminal" class="bg-gray-800 text-white font-mono rounded-lg shadow-lg overflow-hidden"
-        style="width: 450px; height: 350px;">
+    <div id="terminal" class="bg-gray-800 text-white font-mono rounded-lg shadow-lg overflow-hidden max-w-full" style="max-width: 450px; height: auto;">
 
         <!-- Terminal Header for Dragging -->
         <div id="header" class="bg-gray-700 p-2 flex justify-between items-center cursor-move">
@@ -30,13 +28,12 @@
         <div class="resize-handle top-right handle-corner"></div>
         <div class="resize-handle bottom-left handle-corner"></div>
         <div class="resize-handle bottom-right handle-corner"></div>
-
         <div class="resize-handle top handle-edge"></div>
         <div class="resize-handle bottom handle-edge"></div>
         <div class="resize-handle left handle-edge"></div>
         <div class="resize-handle right handle-edge"></div>
 
-        <div id="output" class="p-4 overflow-y-auto h-[240px]">
+        <div id="output" class="p-4 overflow-y-auto h-[240px] max-h-[60vh]">
             <div class="mt-4 flex">
                 <span class="text-green-400">computer:~$</span>
                 <p class="flex-1 typing items-center pl-2">
@@ -45,10 +42,10 @@
                 </p>
             </div>
         </div>
-
     </div>
 
     <script src="./script.js"></script>
+
 </body>
 
 </html>
