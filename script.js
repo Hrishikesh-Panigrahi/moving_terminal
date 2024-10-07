@@ -104,3 +104,17 @@ function stopDrag() {
   document.removeEventListener("mousemove", drag);
   document.removeEventListener("mouseup", stopDrag);
 }
+
+function resizeFont() {
+  const width = terminal.offsetWidth;
+  const height = terminal.offsetHeight;
+  const baseFontSize = 10;
+  const fontSize = Math.max(baseFontSize, Math.min(width, height) / 20);
+  output.style.fontSize = `${fontSize}px`;
+}
+
+resizeFont();
+
+new ResizeObserver(() => {
+  resizeFont();
+}).observe(terminal);
