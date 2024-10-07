@@ -1,0 +1,95 @@
+#terminal {
+    position: absolute;
+    min-width: 300px;
+    min-height: 200px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow: hidden;
+    resize: none;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    border: 1px solid #444;
+}
+
+.resize-handle {
+    position: absolute;
+    background-color: transparent;
+}
+
+.handle-corner {
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+}
+
+.handle-edge {
+    z-index: 10;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    cursor: nwse-resize;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    cursor: nesw-resize;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    cursor: nesw-resize;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    cursor: nwse-resize;
+}
+
+.top {
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 10px;
+    cursor: ns-resize;
+}
+
+.bottom {
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 10px;
+    cursor: ns-resize;
+}
+
+.left {
+    top: 20px;
+    bottom: 20px;
+    left: 0;
+    width: 10px;
+    cursor: ew-resize;
+}
+
+.right {
+    top: 20px;
+    bottom: 20px;
+    right: 0;
+    width: 10px;
+    cursor: ew-resize;
+}
+
+/* Header for dragging */
+#header {
+    background-color: #1f2937;
+    padding: 8px;
+    cursor: move;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
