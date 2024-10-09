@@ -96,7 +96,6 @@ function stopResize() {
   document.removeEventListener("mouseup", stopResize);
   document.removeEventListener("touchmove", resize);
   document.removeEventListener("touchend", stopResize);
-
 }
 
 // Dragging logic

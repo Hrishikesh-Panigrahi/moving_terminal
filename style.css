@@ -96,9 +96,9 @@
 @media (max-width: 480px) {
     #terminal {
         width: 100%;
-        height: auto; /* Make height flexible */
+        height: auto; 
     }
     #output {
-        max-height: 50vh; /* Adjust output height */
+        max-height: 50vh; 
     }
 }
