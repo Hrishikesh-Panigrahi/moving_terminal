@@ -121,6 +121,7 @@ function resizeFont() {
   const baseFontSize = 10;
   const fontSize = Math.max(baseFontSize, Math.min(width, height) / 20);
   document.getElementById("output").style.fontSize = `${fontSize}px`;
+  document.getElementById("footer").style.fontSize = `${fontSize * 0.8}px`;
 }
 
 resizeFont();
