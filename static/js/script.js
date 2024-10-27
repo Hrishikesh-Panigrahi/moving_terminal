@@ -7,6 +7,13 @@ let isDragging = false;
 let currentHandle;
 let startX, startY, startWidth, startHeight, startTop, startLeft;
 
+window.addEventListener("DOMContentLoaded", () => {
+  const terminal = document.getElementById("terminal");
+  terminal.style.left = `${terminal.offsetLeft}px`;
+  terminal.style.top = `${terminal.offsetTop}px`;
+});
+
+
 // Resizing logic
 handles.forEach((handle) => {
   handle.addEventListener("mousedown", (e) => {
@@ -65,9 +72,10 @@ function resize(e) {
   // Ensure the terminal doesn't exceed window size or shrink too small
   if (width && width >= 300 && width <= maxWidth) terminal.style.width = width + "px";
   if (height && height >= 200 && height <= maxHeight) terminal.style.height = height + "px";
-  if (top && top >= 0) terminal.style.top = top + "px";
-  if (left && left >= 0) terminal.style.left = left + "px";
+  if (top !== undefined && top >= 0) terminal.style.top = top + "px";
+  if (left !== undefined && left >= 0) terminal.style.left = left + "px";
 }
+
 
 function stopResize() {
   isResizing = false;
