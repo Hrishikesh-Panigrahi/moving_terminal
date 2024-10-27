@@ -89,6 +89,13 @@
     font-size: 1.1rem;
     line-height: 1.5;
     padding: 20px;
+    flex-grow: 1; 
+}
+
+#footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
 }
 
 #header {
