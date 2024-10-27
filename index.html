@@ -7,7 +7,8 @@
     <title>Fun Terminal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./static/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
 <body class="bg-gray-900 flex items-center justify-center min-h-screen p-4">
@@ -41,11 +42,12 @@
         </div>
 
         <div id="footer" class="bg-gray-700 p-2 text-gray-400 text-xs border-t border-gray-600 text-left">
-            Last login: Fri Oct 20 09:30:56 2024 from localhost
+            Last login: <span id="last-login-time"></span> from localhost
         </div>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="./static/js/script.js"></script>
+    <script src="./static/js/lastLogin.js"></script>
 
 </body>
 
